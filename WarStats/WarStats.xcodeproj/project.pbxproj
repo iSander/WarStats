@@ -13,6 +13,9 @@
 		A67AD993287AB55400CADB23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67AD991287AB55400CADB23 /* Main.storyboard */; };
 		A67AD995287AB55800CADB23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A67AD994287AB55800CADB23 /* Assets.xcassets */; };
 		A67AD998287AB55800CADB23 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67AD996287AB55800CADB23 /* LaunchScreen.storyboard */; };
+		A67AD9A3287AC81C00CADB23 /* russia_losses_personnel.json in Resources */ = {isa = PBXBuildFile; fileRef = A67AD9A1287AC81C00CADB23 /* russia_losses_personnel.json */; };
+		A67AD9A4287AC81C00CADB23 /* russia_losses_equipment.json in Resources */ = {isa = PBXBuildFile; fileRef = A67AD9A2287AC81C00CADB23 /* russia_losses_equipment.json */; };
+		A67AD9AA287AC94E00CADB23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67AD9A9287AC94E00CADB23 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		A67AD994287AB55800CADB23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A67AD997287AB55800CADB23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A67AD999287AB55800CADB23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A67AD9A1287AC81C00CADB23 /* russia_losses_personnel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_personnel.json; sourceTree = "<group>"; };
+		A67AD9A2287AC81C00CADB23 /* russia_losses_equipment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_equipment.json; sourceTree = "<group>"; };
+		A67AD9A9287AC94E00CADB23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,66 @@
 		A67AD98A287AB55400CADB23 /* WarStats */ = {
 			isa = PBXGroup;
 			children = (
-				A67AD98B287AB55400CADB23 /* AppDelegate.swift */,
-				A67AD98D287AB55400CADB23 /* SceneDelegate.swift */,
-				A67AD98F287AB55400CADB23 /* ViewController.swift */,
+				A67AD99F287AC1F600CADB23 /* Classes */,
+				A67AD9A0287AC81C00CADB23 /* Data */,
 				A67AD991287AB55400CADB23 /* Main.storyboard */,
 				A67AD994287AB55800CADB23 /* Assets.xcassets */,
 				A67AD996287AB55800CADB23 /* LaunchScreen.storyboard */,
 				A67AD999287AB55800CADB23 /* Info.plist */,
 			);
 			path = WarStats;
+			sourceTree = "<group>";
+		};
+		A67AD99F287AC1F600CADB23 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A67AD9A5287AC90500CADB23 /* Models */,
+				A67AD9A7287AC90500CADB23 /* Views */,
+				A67AD9A8287AC90500CADB23 /* Controllers */,
+				A67AD9A6287AC90500CADB23 /* Helpers */,
+				A67AD98D287AB55400CADB23 /* SceneDelegate.swift */,
+				A67AD98B287AB55400CADB23 /* AppDelegate.swift */,
+				A67AD98F287AB55400CADB23 /* ViewController.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		A67AD9A0287AC81C00CADB23 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A67AD9A1287AC81C00CADB23 /* russia_losses_personnel.json */,
+				A67AD9A2287AC81C00CADB23 /* russia_losses_equipment.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A67AD9A5287AC90500CADB23 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		A67AD9A6287AC90500CADB23 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				A67AD9A9287AC94E00CADB23 /* Constants.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		A67AD9A7287AC90500CADB23 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A67AD9A8287AC90500CADB23 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +182,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A67AD9A3287AC81C00CADB23 /* russia_losses_personnel.json in Resources */,
+				A67AD9A4287AC81C00CADB23 /* russia_losses_equipment.json in Resources */,
 				A67AD998287AB55800CADB23 /* LaunchScreen.storyboard in Resources */,
 				A67AD995287AB55800CADB23 /* Assets.xcassets in Resources */,
 				A67AD993287AB55400CADB23 /* Main.storyboard in Resources */,
@@ -141,6 +200,7 @@
 				A67AD990287AB55400CADB23 /* ViewController.swift in Sources */,
 				A67AD98C287AB55400CADB23 /* AppDelegate.swift in Sources */,
 				A67AD98E287AB55400CADB23 /* SceneDelegate.swift in Sources */,
+				A67AD9AA287AC94E00CADB23 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
