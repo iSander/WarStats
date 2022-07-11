@@ -16,6 +16,8 @@
 		A67AD9A3287AC81C00CADB23 /* russia_losses_personnel.json in Resources */ = {isa = PBXBuildFile; fileRef = A67AD9A1287AC81C00CADB23 /* russia_losses_personnel.json */; };
 		A67AD9A4287AC81C00CADB23 /* russia_losses_equipment.json in Resources */ = {isa = PBXBuildFile; fileRef = A67AD9A2287AC81C00CADB23 /* russia_losses_equipment.json */; };
 		A67AD9AA287AC94E00CADB23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67AD9A9287AC94E00CADB23 /* Constants.swift */; };
+		A67AD9AC287C948E00CADB23 /* Personnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67AD9AB287C948E00CADB23 /* Personnel.swift */; };
+		A67AD9AE287CA35700CADB23 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67AD9AD287CA35700CADB23 /* Equipment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		A67AD9A1287AC81C00CADB23 /* russia_losses_personnel.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_personnel.json; sourceTree = "<group>"; };
 		A67AD9A2287AC81C00CADB23 /* russia_losses_equipment.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = russia_losses_equipment.json; sourceTree = "<group>"; };
 		A67AD9A9287AC94E00CADB23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A67AD9AB287C948E00CADB23 /* Personnel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personnel.swift; sourceTree = "<group>"; };
+		A67AD9AD287CA35700CADB23 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 		A67AD9A5287AC90500CADB23 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A67AD9AB287C948E00CADB23 /* Personnel.swift */,
+				A67AD9AD287CA35700CADB23 /* Equipment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,6 +205,8 @@
 			files = (
 				A67AD990287AB55400CADB23 /* ViewController.swift in Sources */,
 				A67AD98C287AB55400CADB23 /* AppDelegate.swift in Sources */,
+				A67AD9AE287CA35700CADB23 /* Equipment.swift in Sources */,
+				A67AD9AC287C948E00CADB23 /* Personnel.swift in Sources */,
 				A67AD98E287AB55400CADB23 /* SceneDelegate.swift in Sources */,
 				A67AD9AA287AC94E00CADB23 /* Constants.swift in Sources */,
 			);
