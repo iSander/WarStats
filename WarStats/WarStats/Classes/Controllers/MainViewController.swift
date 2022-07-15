@@ -13,8 +13,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     var personnelArray = [Personnel]()
+    var equipmentArray = [Equipment]()
     
-    
+    deinit {
+        print("deinit \(NSStringFromClass(type(of: self)))")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,18 +38,19 @@ class MainViewController: UIViewController {
         datePicker.maximumDate = personnelArray.last?.date?.toDate()
         datePicker.date = personnelArray.first?.date?.toDate() ?? Date()
         
-//        if let fileURL = Bundle.main.url(forResource: "russia_losses_equipment", withExtension: "json") {
-//            if let jsonData = try? Data(contentsOf: fileURL) {
-//
-//                do {
-//                    let equipmentArray: [Equipment] = try JSONDecoder().decode([Equipment].self, from: jsonData)
-//                    print(equipmentArray.count)
-//                } catch {
-//                    //handle error
-//                    print(error)
-//                }
-//            }
-//        }
+        if let fileURL = Bundle.main.url(forResource: "russia_losses_equipment", withExtension: "json") {
+            if let jsonData = try? Data(contentsOf: fileURL) {
+                
+                var jsonString = String(data: jsonData, encoding: .utf8)
+                jsonString = jsonString?.replacingOccurrences(of: "NaN", with: "0")
+
+                let array = jsonString?.toJSON() as? [Dictionary<String, AnyObject>]
+                for dict in array ?? [] {
+                    let equipment = Equipment(with: dict)
+                    equipmentArray.append(equipment)
+                }
+            }
+        }
         
         
         
@@ -61,6 +65,15 @@ class MainViewController: UIViewController {
 //            }
 //        }
     }
+    
+    @IBAction func showAction() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "StatsViewController") as! StatsViewController
+        vc.personnel = personnelArray[dayPickerView.selectedRow(inComponent: 0)]
+        vc.equipment = equipmentArray[dayPickerView.selectedRow(inComponent: 0)]
+        present(vc, animated: true)
+    }
+    
 }
 
 extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {

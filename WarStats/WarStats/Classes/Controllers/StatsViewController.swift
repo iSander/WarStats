@@ -1,0 +1,66 @@
+//
+//  StatsViewController.swift
+//  WarStats
+//
+//  Created by Alex Sander on 14.07.2022.
+//
+
+import UIKit
+
+class StatsViewController: UIViewController {
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var personnelLabel: UILabel!
+    @IBOutlet weak var powLabel: UILabel!
+    
+    @IBOutlet weak var equipmentCollectionView: UICollectionView!
+    
+    var personnel: Personnel?
+    var equipment: Equipment?
+    
+    deinit {
+        print("deinit \(NSStringFromClass(type(of: self)))")
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        if let flowLayout = equipmentCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
+            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
+        }
+
+        dateLabel.text = "\(personnel?.date ?? "") (\(personnel?.day ?? 0) day of war)"
+        personnelLabel.text = "personnel: " +
+            ((personnel?.personnelPrefix ?? "") == "about" ? "~" : "") +
+            "\(personnel?.personnel ?? 0)" +
+            (personnel?.personnelPrefix == "more" ? "+" : "")
+        powLabel.text = "prisoner of war: \(personnel?.pow ?? 0)"
+    }
+}
+
+extension StatsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return equipment?.array.count ?? 0
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 50
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+//        return 50
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EquipmentCell", for: indexPath) as! EquipmentCollectionViewCell
+        //cell.backgroundColor = .gray
+
+        let channel = equipment?.array[indexPath.row]
+        cell.configure(with: channel)
+        
+        return cell
+    }
+    
+    
+}
