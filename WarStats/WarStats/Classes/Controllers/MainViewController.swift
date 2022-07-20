@@ -71,6 +71,7 @@ class MainViewController: UIViewController {
         let vc = storyboard.instantiateViewController(withIdentifier: "StatsViewController") as! StatsViewController
         vc.personnel = personnelArray[dayPickerView.selectedRow(inComponent: 0)]
         vc.equipment = equipmentArray[dayPickerView.selectedRow(inComponent: 0)]
+        vc.previousDayEquipment = equipmentArray[max(dayPickerView.selectedRow(inComponent: 0) - 1, 0)]
         present(vc, animated: true)
     }
     

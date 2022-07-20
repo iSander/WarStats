@@ -17,6 +17,7 @@ class StatsViewController: UIViewController {
     
     var personnel: Personnel?
     var equipment: Equipment?
+    var previousDayEquipment: Equipment?
     
     deinit {
         print("deinit \(NSStringFromClass(type(of: self)))")
@@ -25,9 +26,6 @@ class StatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let flowLayout = equipmentCollectionView?.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        }
 
         dateLabel.text = "\(personnel?.date ?? "") (\(personnel?.day ?? 0) day of war)"
         personnelLabel.text = "personnel: " +
@@ -44,23 +42,12 @@ extension StatsViewController: UICollectionViewDataSource, UICollectionViewDeleg
         return equipment?.array.count ?? 0
     }
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return 50
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-//        return 50
-//    }
-    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EquipmentCell", for: indexPath) as! EquipmentCollectionViewCell
-        //cell.backgroundColor = .gray
 
-        let channel = equipment?.array[indexPath.row]
-        cell.configure(with: channel)
+        let selectedEquipment = equipment?.array[indexPath.row]
+        cell.configure(with: selectedEquipment, previous: previousDayEquipment)
         
         return cell
     }
-    
-    
 }
