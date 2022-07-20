@@ -9,9 +9,10 @@ import Foundation
 
 class Constants {
     
-    static let shared = Constants()
-    
-    //static let DateFormat = "yyyy-MM-dd"
+    struct fileNames {
+        static let lossesPersonnel = "russia_losses_personnel"
+        static let lossesEquipment = "russia_losses_equipment"
+    }
 }
 
 /*

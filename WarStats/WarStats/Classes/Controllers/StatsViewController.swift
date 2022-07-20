@@ -26,7 +26,10 @@ class StatsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
+        setupUI()
+    }
+    
+    private func setupUI() {
         dateLabel.text = "\(personnel?.date ?? "") (\(personnel?.day ?? 0) day of war)"
         personnelLabel.text = "personnel: " +
             ((personnel?.personnelPrefix ?? "") == "about" ? "~" : "") +

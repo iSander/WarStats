@@ -22,48 +22,16 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let fileURL = Bundle.main.url(forResource: "russia_losses_personnel", withExtension: "json") {
-            if let jsonData = try? Data(contentsOf: fileURL) {
-                
-                do {
-                    personnelArray = try JSONDecoder().decode([Personnel].self, from: jsonData)
-                    print(personnelArray.count)
-                } catch {
-                    print(error)
-                }
-            }
-        }
+        personnelArray = DataManager.shared.getPersonnel(from: Constants.fileNames.lossesPersonnel)
+        equipmentArray = DataManager.shared.getEquipment(from: Constants.fileNames.lossesEquipment)
         
+        setupUI()
+    }
+    
+    private func setupUI() {
         datePicker.minimumDate = personnelArray.first?.date?.toDate()
         datePicker.maximumDate = personnelArray.last?.date?.toDate()
         datePicker.date = personnelArray.first?.date?.toDate() ?? Date()
-        
-        if let fileURL = Bundle.main.url(forResource: "russia_losses_equipment", withExtension: "json") {
-            if let jsonData = try? Data(contentsOf: fileURL) {
-                
-                var jsonString = String(data: jsonData, encoding: .utf8)
-                jsonString = jsonString?.replacingOccurrences(of: "NaN", with: "0")
-
-                let array = jsonString?.toJSON() as? [Dictionary<String, AnyObject>]
-                for dict in array ?? [] {
-                    let equipment = Equipment(with: dict)
-                    equipmentArray.append(equipment)
-                }
-            }
-        }
-        
-        
-        
-        
-        
-//        let urlString = "https://raw.githubusercontent.com/MacPaw/2022-Ukraine-Russia-War-Dataset/918debb3b328b74173d50cc9824507ed59e9c3c2/data/russia_losses_equipment.json"
-//
-//        if let url = URL(string: urlString) {
-//            if let jsonData = try? Data(contentsOf: url) {
-//                let personnelArray: [Personnel] = try! JSONDecoder().decode([Personnel].self, from: jsonData)
-//                print(personnelArray.count)
-//            }
-//        }
     }
     
     @IBAction func showAction() {
@@ -74,7 +42,6 @@ class MainViewController: UIViewController {
         vc.previousDayEquipment = equipmentArray[max(dayPickerView.selectedRow(inComponent: 0) - 1, 0)]
         present(vc, animated: true)
     }
-    
 }
 
 extension MainViewController: UIPickerViewDelegate, UIPickerViewDataSource {

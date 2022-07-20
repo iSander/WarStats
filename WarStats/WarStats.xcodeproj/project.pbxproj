@@ -18,6 +18,7 @@
 		A67AD9AA287AC94E00CADB23 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67AD9A9287AC94E00CADB23 /* Constants.swift */; };
 		A67AD9AC287C948E00CADB23 /* Personnel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67AD9AB287C948E00CADB23 /* Personnel.swift */; };
 		A67AD9AE287CA35700CADB23 /* Equipment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A67AD9AD287CA35700CADB23 /* Equipment.swift */; };
+		A68680CC2888245F0091857B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68680CB2888245F0091857B /* DataManager.swift */; };
 		A68943DE287ECD030010C591 /* Date+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68943DD287ECD030010C591 /* Date+Ext.swift */; };
 		A6A8AB43287E0952007CB5D6 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A8AB42287E0952007CB5D6 /* String+Ext.swift */; };
 		A6CFE49628802A8B00A11366 /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CFE49528802A8B00A11366 /* StatsViewController.swift */; };
@@ -38,6 +39,7 @@
 		A67AD9A9287AC94E00CADB23 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A67AD9AB287C948E00CADB23 /* Personnel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personnel.swift; sourceTree = "<group>"; };
 		A67AD9AD287CA35700CADB23 /* Equipment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Equipment.swift; sourceTree = "<group>"; };
+		A68680CB2888245F0091857B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		A68943DD287ECD030010C591 /* Date+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ext.swift"; sourceTree = "<group>"; };
 		A6A8AB42287E0952007CB5D6 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		A6CFE49528802A8B00A11366 /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				A67AD9A9287AC94E00CADB23 /* Constants.swift */,
+				A68680CA2888241D0091857B /* Managers */,
 				A6A8AB41287E0942007CB5D6 /* Extensions */,
 			);
 			path = Helpers;
@@ -139,6 +142,14 @@
 				A6CFE49528802A8B00A11366 /* StatsViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		A68680CA2888241D0091857B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				A68680CB2888245F0091857B /* DataManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 		A6A8AB41287E0942007CB5D6 /* Extensions */ = {
@@ -231,6 +242,7 @@
 				A67AD9AC287C948E00CADB23 /* Personnel.swift in Sources */,
 				A67AD98E287AB55400CADB23 /* SceneDelegate.swift in Sources */,
 				A6CFE49628802A8B00A11366 /* StatsViewController.swift in Sources */,
+				A68680CC2888245F0091857B /* DataManager.swift in Sources */,
 				A67AD9AA287AC94E00CADB23 /* Constants.swift in Sources */,
 				A6CFE4982880437400A11366 /* EquipmentCollectionViewCell.swift in Sources */,
 			);
